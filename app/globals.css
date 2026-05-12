@@ -10,6 +10,34 @@
   --parchment-dim: #dfcfaa;
   --brass: #b08d57;
   --uv: #6be3ff;
+
+  /* Core detective/steampunk tones */
+  --surface-base-rgb: 18 20 27;
+  --surface-deep-rgb: 15 18 25;
+  --paper-ink-rgb: 40 33 25;
+  --metal-rgb: 146 115 71;
+
+  /* Semantic aliases used across components */
+  --surface-page-rgb: var(--surface-base-rgb);
+  --surface-panel-rgb: var(--surface-base-rgb);
+  --surface-wheel-rgb: var(--surface-base-rgb);
+  --surface-shell-rgb: var(--surface-deep-rgb);
+  --surface-scanner-rgb: var(--surface-deep-rgb);
+  --ink-rgb: 8 8 10;
+  --parchment-rgb: 244 235 208;
+  --parchment-dim-rgb: 223 207 170;
+  --brass-rgb: 176 141 87;
+  --copper-rgb: var(--metal-rgb);
+  --copper-mid-rgb: var(--metal-rgb);
+  --copper-light-rgb: var(--metal-rgb);
+  --umber-rgb: var(--paper-ink-rgb);
+  --ink-paper-rgb: var(--paper-ink-rgb);
+  --ink-paper-deep-rgb: var(--paper-ink-rgb);
+  --uv-rgb: 107 227 255;
+  --wand-rgb: 74 222 128;
+  --reveal-ink-rgb: 10 10 13;
+  --signal-ready-rgb: 79 170 120;
+  --uv-shadow-rgb: 2 5 12;
   --uv-x: 50vw;
   --uv-y: 50vh;
 }
@@ -23,48 +51,82 @@
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-courier-prime), "Courier New", monospace;
   min-height: 100%;
-  background-image:
-    radial-gradient(circle at 15% 10%, rgba(176, 141, 87, 0.1), transparent 45%),
-    radial-gradient(circle at 85% 85%, rgba(176, 141, 87, 0.08), transparent 40%),
-    linear-gradient(125deg, #0e1014 0%, #1b1c23 45%, #11131a 100%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  isolation: isolate;
+  background: var(--background);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100vh;
+  height: 100vw;
+  transform: translate(-50%, -50%) rotate(90deg) scale(1.08);
+  transform-origin: center;
+  background-image: url("/table.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .paper-texture {
   background-image:
-    linear-gradient(rgba(8, 8, 10, 0.45), rgba(8, 8, 10, 0.65)),
+    linear-gradient(rgb(var(--ink-rgb) / 0.45), rgb(var(--ink-rgb) / 0.65)),
     repeating-linear-gradient(
       0deg,
-      rgba(244, 235, 208, 0.06),
-      rgba(244, 235, 208, 0.06) 1px,
-      rgba(244, 235, 208, 0.02) 2px,
-      rgba(244, 235, 208, 0.02) 4px
+      rgb(var(--parchment-rgb) / 0.06),
+      rgb(var(--parchment-rgb) / 0.06) 1px,
+      rgb(var(--parchment-rgb) / 0.02) 2px,
+      rgb(var(--parchment-rgb) / 0.02) 4px
     );
 }
 
 .fingerprint-path {
   fill: none;
-  stroke: rgba(244, 235, 208, 0.9);
+  stroke: rgb(var(--parchment-rgb) / 0.9);
   stroke-width: 4;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .uv-secret {
-  color: transparent;
-  background-image: radial-gradient(
-    180px circle at var(--uv-x) var(--uv-y),
-    rgba(107, 227, 255, 0.98) 0,
-    rgba(107, 227, 255, 0.72) 42%,
-    rgba(107, 227, 255, 0) 100%
+  color: rgb(var(--reveal-ink-rgb));
+  -webkit-mask-image: radial-gradient(
+    180px circle at var(--uv-secret-x, -9999px) var(--uv-secret-y, -9999px),
+    rgb(0 0 0 / 1) 0,
+    rgb(0 0 0 / 0.92) 42%,
+    rgb(0 0 0 / 0) 100%
   );
-  background-attachment: fixed;
-  -webkit-background-clip: text;
-  background-clip: text;
-  text-shadow: 0 0 0 rgba(107, 227, 255, 0);
+  mask-image: radial-gradient(
+    180px circle at var(--uv-secret-x, -9999px) var(--uv-secret-y, -9999px),
+    rgb(0 0 0 / 1) 0,
+    rgb(0 0 0 / 0.92) 42%,
+    rgb(0 0 0 / 0) 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.uv-secret-value {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+@media (max-width: 640px) {
+  .uv-secret-value {
+    display: block;
+    margin-top: 0.2rem;
+  }
 }
 
 .uv-glow {
@@ -76,9 +138,10 @@ body {
   background:
     radial-gradient(
       160px circle at var(--uv-x) var(--uv-y),
-      rgba(107, 227, 255, 0.28) 0,
-      rgba(107, 227, 255, 0.14) 38%,
-      rgba(107, 227, 255, 0) 100%
+      rgb(var(--wand-rgb) / 0.4) 0,
+      rgb(var(--wand-rgb) / 0.4) 38%,
+      rgb(var(--wand-rgb) / 0) 100%
     ),
-    linear-gradient(rgba(2, 5, 12, 0.7), rgba(2, 5, 12, 0.72));
+    linear-gradient(rgb(var(--uv-shadow-rgb) / 0.7), rgb(var(--uv-shadow-rgb) / 0.72));
 }
+

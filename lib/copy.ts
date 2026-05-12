@@ -1,0 +1,39 @@
+export const copy = {
+  intro: {
+    database: "DATABÁZE SCOTLAND YARD",
+    title: "Naprosto legit oveření totožnosti",
+    holdingMessage: "Oh yea go kind/queen, hold it there",
+    defaultMessageMobile:
+      "Dlouze přitiskni svůj prst k senzoru pro ověření totožnosti",
+    defaultMessageDesktop:
+      "Dlouze přitiskni svou myš k senzoru pro ověření totožnosti",
+  },
+  auth: {
+    title: "Šifra Mistra Leonarda Nikoly",
+    description: "Šifra je datum narození naší milované Nikoly, které jako správný kamarád určitě dobře znáš. Kdyby ne tak hledej indicii v jednon ze svitků dole:",
+    dayLabel: "DEN",
+    monthLabel: "MĚSÍC",
+    yearLabel: "ROK",
+    awaitingAlignment: "Čekání na zarovnání šifry",
+    cipherMismatch: "Neshoda šifry. Znovu zarovnajte a dešifrujte.",
+    accessGranted: "Přístup do Systému Povolen",
+    decryptButton: "DEŠIFROVAT",
+    backButton: "← Zpět",
+  },
+  reveal: {
+    caseLabel: "SPIS PŘÍPADU // POZVÁNKA",
+    title: "Scotland Yard Žádá Vaši Přítomnost",
+    date: "Datum:",
+    dateValue: "Dej mi vědět datum",
+    time: "Čas:",
+    timeValue: "Dej mi vědět čas",
+    place: "Místo:",
+    placeValue: "Dej mi vědět místo",
+    dressCode: "Dress code:",
+    dressCodeValue: "Dark academia styl, viktoriánsky, tvid, tmavé barvy, nebo jen lupy či klobouk",
+    organizer: "Pořadatel:",
+    organizerValue: "NIKČA",
+    celebrationTheme: "Téma oslavy:",
+    celebrationThemeValue: "Sherlock Holmes (obviously)",
+  },
+} as const;
