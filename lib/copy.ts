@@ -2,7 +2,7 @@ export const copy = {
   intro: {
     database: "DATABÁZE SCOTLAND YARD",
     title: "Naprosto legit ověření totožnosti",
-    holdingMessage: "Oh yea go kind/queen, hold it there",
+    holdingMessage: "Oh yea go king/queen, hold it there",
     defaultMessageMobile:
       "Dlouze přitiskni svůj prst k senzoru pro ověření totožnosti",
     defaultMessageDesktop:
