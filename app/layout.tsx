@@ -19,8 +19,34 @@ const courierPrime = Courier_Prime({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: "Scotland Yard Database",
   description: "Victorian noir invitation and authentication terminal",
+  openGraph: {
+    title: "Scotland Yard Database",
+    description: "Victorian noir invitation and authentication terminal",
+    type: "website",
+    siteName: "Scotland Yard Database",
+    images: [
+      {
+        url: "/thumbnail.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Scotland Yard invitation preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Scotland Yard Database",
+    description: "Victorian noir invitation and authentication terminal",
+    images: ["/thumbnail.jpg"],
+  },
+  icons: {
+    icon: "/flashlight.png",
+    shortcut: "/flashlight.png",
+    apple: "/flashlight.png",
+  },
 };
 
 export default function RootLayout({
