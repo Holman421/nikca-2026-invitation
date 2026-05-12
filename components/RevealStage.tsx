@@ -31,7 +31,7 @@ function RevealStage({ uvPosition, folderRef, flapRef, casePaperRef, onBackClick
     <section ref={sectionRef} className="relative flex w-full touch-none items-center justify-center py-3 cursor-none">
       <button
         onClick={onBackClick}
-        className="absolute left-2! md:left-10! top-6 md:top-2 z-50 rounded cursor-pointer border px-3 py-1 text-sm transition hover:bg-[rgb(var(--brass-rgb)/0.1)] sm:left-6 sm:top-6"
+        className="absolute left-2! md:left-20! top-6 md:top-6 z-50 rounded cursor-pointer border px-3 py-1 text-sm transition hover:bg-[rgb(var(--brass-rgb)/0.1)] sm:left-6 sm:top-6"
         style={{ borderColor: "rgb(var(--brass-rgb) / 0.45)" }}
         aria-label="Zpět na dešifrování"
       >
