@@ -10,7 +10,7 @@ export const copy = {
   },
   auth: {
     title: "Šifra Mistra Leonarda Nikoly",
-    description: "Šifra je datum narození naší milované Nikoly, které jako správný kamarád určitě dobře znáš. Kdyby ne tak hledej indicii v jednon ze svitků dole:",
+    description: "Šifra je datum narození naší milované Nikoly, které jako správný kamarád určitě dobře znáš. Kdyby ne tak hledej indicii v jednom ze svitků dole:",
     dayLabel: "DEN",
     monthLabel: "MĚSÍC",
     yearLabel: "ROK",
