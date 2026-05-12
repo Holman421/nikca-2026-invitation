@@ -33,8 +33,9 @@
   --umber-rgb: var(--paper-ink-rgb);
   --ink-paper-rgb: var(--paper-ink-rgb);
   --ink-paper-deep-rgb: var(--paper-ink-rgb);
-  --uv-rgb: 107 227 255;
-  --wand-rgb: 74 222 128;
+  --uv-rgb: 171 117 255;
+  --wand-rgb: 167 82 255;
+  --wand-core-rgb: 224 185 255;
   --reveal-ink-rgb: 10 10 13;
   --signal-ready-rgb: 79 170 120;
   --uv-shadow-rgb: 2 5 12;
@@ -135,13 +136,17 @@ body::before {
   pointer-events: none;
   z-index: 60;
   mix-blend-mode: screen;
-  background:
-    radial-gradient(
-      160px circle at var(--uv-x) var(--uv-y),
-      rgb(var(--wand-rgb) / 0.4) 0,
-      rgb(var(--wand-rgb) / 0.4) 38%,
-      rgb(var(--wand-rgb) / 0) 100%
-    ),
-    linear-gradient(rgb(var(--uv-shadow-rgb) / 0.7), rgb(var(--uv-shadow-rgb) / 0.72));
+  opacity: 0.88;
+  filter: saturate(1.18) blur(1.1px);
+  background: radial-gradient(
+    290px circle at var(--uv-x) var(--uv-y),
+    rgb(var(--wand-core-rgb) / 0.82) 0%,
+    rgb(var(--wand-rgb) / 0.58) 22%,
+    rgb(var(--wand-rgb) / 0.34) 48%,
+    rgb(var(--wand-rgb) / 0.16) 70%,
+    rgb(var(--wand-rgb) / 0.06) 84%,
+    rgb(var(--wand-rgb) / 0.015) 94%,
+    rgb(var(--wand-rgb) / 0) 100%
+  );
 }
 

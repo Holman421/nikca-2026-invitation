@@ -1,7 +1,7 @@
 export const copy = {
   intro: {
     database: "DATABÁZE SCOTLAND YARD",
-    title: "Naprosto legit oveření totožnosti",
+    title: "Naprosto legit ověření totožnosti",
     holdingMessage: "Oh yea go kind/queen, hold it there",
     defaultMessageMobile:
       "Dlouze přitiskni svůj prst k senzoru pro ověření totožnosti",
@@ -23,6 +23,7 @@ export const copy = {
   reveal: {
     caseLabel: "SPIS PŘÍPADU // POZVÁNKA",
     title: "Scotland Yard Žádá Vaši Přítomnost",
+    mobileHint: "Přejeď prstem po papíru a odhal skryté informace.",
     date: "Datum:",
     dateValue: "Dej mi vědět datum",
     time: "Čas:",

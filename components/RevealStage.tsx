@@ -98,6 +98,9 @@ function RevealStage({ uvPosition, folderRef, flapRef, casePaperRef, onBackClick
           <h3 className="mt-2 text-2xl font-bold tracking-[0.08em]" style={{ color: "rgb(var(--ink-paper-deep-rgb))" }}>
             {copy.reveal.title}
           </h3>
+          <p className="mt-2 text-xs tracking-[0.04em] sm:hidden" style={{ color: "rgb(var(--umber-rgb) / 0.82)" }}>
+            {copy.reveal.mobileHint}
+          </p>
           <div className="mt-6 space-y-3 text-base leading-relaxed">
             <p>
               {copy.reveal.organizer} <span className="uv-secret uv-secret-value font-bold tracking-[0.08em]">{copy.reveal.organizerValue}</span>

@@ -285,14 +285,27 @@ function Home() {
       {stage === "reveal" && (
         <>
           <div className="uv-glow" aria-hidden="true" />
-          <div
-            className="pointer-events-none fixed z-70 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border-2"
+          <img
+            src="/flashlight.png"
+            alt=""
+            className="pointer-events-none fixed z-65 size-60! rotate-90 select-none object-fill opacity-95 sm:h-20 sm:w-20"
             style={{
               left: `${uvPosition.x}px`,
               top: `${uvPosition.y}px`,
-              borderColor: "rgb(var(--wand-rgb))",
-              backgroundColor: "rgb(var(--wand-rgb) / 0.18)",
-              boxShadow: "0 0 26px rgb(var(--wand-rgb) / 0.85), inset 0 0 8px rgb(var(--wand-rgb) / 0.5)",
+              transform: "translate(0px, 0px) rotate(-18deg)",
+              filter: "drop-shadow(0 4px 8px rgb(var(--ink-rgb) / 0.45))",
+            }}
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none fixed z-70 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border"
+            style={{
+              left: `${uvPosition.x}px`,
+              top: `${uvPosition.y}px`,
+              borderColor: "rgb(var(--wand-core-rgb) / 0.45)",
+              backgroundColor: "rgb(var(--wand-rgb) / 0.24)",
+              boxShadow:
+                "0 0 16px rgb(var(--wand-core-rgb) / 0.78), 0 0 36px rgb(var(--wand-rgb) / 0.72), inset 0 0 8px rgb(var(--wand-core-rgb) / 0.3)",
             }}
             aria-hidden="true"
           />
